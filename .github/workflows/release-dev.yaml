@@ -2,11 +2,11 @@
 name: Release Charts Dev
 
 on:
-  pull_request:
+  push:
     branches:
       - development
     tags:
-      - cd-rc/*
+      - 'rc*'
 
 jobs:
   updateChartVersion:
