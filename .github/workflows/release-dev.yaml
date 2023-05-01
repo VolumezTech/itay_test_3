@@ -2,14 +2,15 @@
 name: Release Charts Dev
 
 on:
-  pull_request:
+  push:
     branches:
-      - development
+      - 'rc/*'
 
 jobs:
   updateChartVersion:
     runs-on: ubuntu-latest
    # if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'rc/')
+    if: github.ref == 'refs/heads/development'
     steps:
       - uses: actions/checkout@v3
         with:
