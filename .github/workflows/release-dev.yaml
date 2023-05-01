@@ -2,11 +2,9 @@
 name: Release Charts Dev
 
 on:
-  push:
+  pull_request:
     branches:
       - development
-    tags:
-      - 'rc*'
 
 jobs:
   updateChartVersion:
