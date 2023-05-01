@@ -10,7 +10,7 @@ on:
 jobs:
   updateChartVersion:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true
+    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'rc/')
     steps:
       - uses: actions/checkout@v3
         with:
