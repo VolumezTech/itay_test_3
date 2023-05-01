@@ -2,15 +2,16 @@
 name: Release Charts Dev
 
 on:
-  pull_request:
-    types: [closed]
+  push:
     branches:
       - development
+    tags:
+      - rc/*
 
 jobs:
   updateChartVersion:
     runs-on: ubuntu-latest
-    if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'rc/')
+   # if: github.event.pull_request.merged == true && startsWith(github.head_ref, 'rc/')
     steps:
       - uses: actions/checkout@v3
         with:
