@@ -53,13 +53,13 @@ jobs:
           git config user.name "$GITHUB_ACTOR"
           git config user.email "$GITHUB_ACTOR@users.noreply.github.com"
           git commit -a -m "Update chart version to ${{ steps.update_chart_version.outputs.NEW_CHART_VERSION }}"
-          git fetch &> /dev/null
+          git push
       
-      - name: Push changes
-        uses: CasperWA/push-protected@v2
-        with:
-         # token: ${{ secrets.PAT }}
-          branch: ${{ github.ref }}
+   #   - name: Push changes
+   #     uses: CasperWA/push-protected@v2
+   #     with:
+   #      # token: ${{ secrets.PAT }}
+   #       branch: ${{ github.ref }}
         #  branch: development
           
 
