@@ -15,6 +15,12 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         
+      - name: Dependency build
+        id: helm_dependency_build
+        run: |
+          cd charts/volumez-csi
+          helm dependency build
+        
       - name: Run Datree Policy Check
         uses: datreeio/action-datree@main
         with:
